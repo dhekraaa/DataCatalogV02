@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.WG-Consulting</groupId>
+    <artifactId>DataCatalog</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <scala.version>2.12</scala.version>
+        <spark.version>3.0.0-preview2</spark.version>
+        <java.version>8.0.19</java.version>
+    </properties>
+
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_${scala.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_${scala.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-hive -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive_${scala.version}</artifactId>
+            <version>${spark.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.19</version>
+        </dependency>
+
+        <!-- testing for Hive-->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive_${scala.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.spark-project.hive</groupId>
+            <artifactId>hive-exec</artifactId>
+            <version>1.2.1.spark2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.spark-project.hive</groupId>
+            <artifactId>hive-metastore</artifactId>
+            <version>1.2.1.spark2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-mllib -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-mllib_${scala.version}</artifactId>
+            <version>${spark.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.scalatest/scalatest -->
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_2.12</artifactId>
+            <version>3.3.0-SNAP2</version>
+            <scope>test</scope>
+        </dependency>
+
+
+
+    </dependencies>
+
+
+</project>
