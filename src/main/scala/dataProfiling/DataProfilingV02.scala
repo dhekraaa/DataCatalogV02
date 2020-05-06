@@ -1,8 +1,9 @@
-package DataProfiling
+package dataProfiling
 
+import Persistance.DBConfig
 import io.netty.handler.codec.http2.DefaultHttp2DataFrame
 import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
-import org.apache.spark.sql.{DataFrame, DataFrameReader, Row, SparkSession}
+import org.apache.spark.sql.{DataFrame, DataFrameReader, Row, SaveMode, SparkSession}
 
 class DataProfilingV02 {
   val spark = SparkSession.builder
@@ -37,7 +38,7 @@ class DataProfilingV02 {
 
   def Profiler(data: DataFrame, columns: String*): Unit ={
    // val dfWithoutSchema = spark.createDataFrame(data)
-    data.describe().show()
+    data.describe().write.mode(SaveMode.Overwrite).jdbc(DBConfig.jdbcUrl,"DataProfile",DBConfig.connectionProperties) //.show()
     //val output = data.describe()
       //return output
 

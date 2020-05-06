@@ -1,4 +1,4 @@
-package DataProfiling
+package dataProfiling
 
 import org.apache.spark.sql.SparkSession
 

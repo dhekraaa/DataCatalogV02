@@ -1,4 +1,4 @@
-package DataProfiling
+package dataProfiling
 
 object Test {
   val path1 = "src/main/resources/sales.csv"
